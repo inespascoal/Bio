@@ -20,7 +20,7 @@ def forward():
     
     for i in range(180):
         servo.setServoAngle(3,120-i/3)
-        servo.setServoAngle(2,90-i/4) 
+        servo.setServoAngle(2,90+i/4) 
         
         servo.setServoAngle(9,60+i/3) # para de trás direita faz o mesmo
         servo.setServoAngle(10, 90-i/3.6) 
