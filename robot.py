@@ -82,10 +82,10 @@ def forward():
         # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
         if i > 90:
             servo.setServoAngle(9, 120 - (i-90)/3 )
-            servo.setServoAngle(10, 140 + (i-90)/3.6 ) 
+            servo.setServoAngle(10, 140 - (i-90)/3.6 ) 
 
             servo.setServoAngle(3,60 + (i-90)/3 ) 
-            servo.setServoAngle(2, 40 - (i-90)/3.6 ) 
+            servo.setServoAngle(2, 40 + (i-90)/3.6 ) 
         
         time.sleep(0.01)
         
