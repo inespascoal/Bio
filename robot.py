@@ -14,7 +14,7 @@ def forward():
     servo.setServoAngle(2,90) 
     servo.setServoAngle(5,40)
     servo.setServoAngle(10,90)
-    servo.setServoAngle(13,143) # antes estava 143
+    servo.setServoAngle(13,145) # antes estava 143
     
     servo.setServoAngle(7,75)
     servo.setServoAngle(8,100)
@@ -29,8 +29,8 @@ def forward():
             servo.setServoAngle(3,120-i/3)
             servo.setServoAngle(9,60+i/3) # para de trás direita faz o mesmo
             
-            servo.setServoAngle(2,90 + i/3.6)
-            servo.setServoAngle(10, 90 - i/3.6)
+            servo.setServoAngle(2,90 - i/3.6)
+            servo.setServoAngle(10, 90 + i/3.6)
             
             
         '''            
@@ -65,7 +65,7 @@ def forward():
             servo.setServoAngle(6,120-i/3)
             servo.setServoAngle(5, 90 - i/3.6)
             servo.setServoAngle(12,60+i/3) 
-            servo.setServoAngle(13, 140 + i/3.6)
+            servo.setServoAngle(13, 90 + i/3.6)
         
         '''
         if i < 90:
@@ -82,10 +82,10 @@ def forward():
         # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
         if i > 90:
             servo.setServoAngle(9, 120 - (i-90)/3 )
-            servo.setServoAngle(10, 40 + (i-90)/3.6 ) 
+            servo.setServoAngle(10, 140 + (i-90)/3.6 ) 
 
             servo.setServoAngle(3,60 + (i-90)/3 ) 
-            servo.setServoAngle(2, 140 - (i-90)/3.6 ) 
+            servo.setServoAngle(2, 40 - (i-90)/3.6 ) 
         
         time.sleep(0.01)
         
