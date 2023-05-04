@@ -38,7 +38,7 @@ def forward():
             servo.setServoAngle(6,60 + (i-90)/3 ) # a pata frente esquerda anda para a frente
             servo.setServoAngle(5, 40 + (i-90)/3 ) 
         
-        time.sleep(0.1)
+        time.sleep(0.05)
      
     
         # estará ao contrário da posição inicial
@@ -64,7 +64,7 @@ def forward():
             servo.setServoAngle(3,60 + (i-90)/3 ) 
             servo.setServoAngle(2, 40 + (i-90)/3 ) 
         
-        time.sleep(0.1)
+        time.sleep(0.05)
         
         # em principio estará na posição inicial
         
