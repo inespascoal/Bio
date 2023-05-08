@@ -10,7 +10,7 @@ def forward():
     servo.setServoAngle(3,120)
     
     servo.setServoAngle(2,70) 
-    servo.setServoAngle(5,30)
+    servo.setServoAngle(5,27)
     servo.setServoAngle(10,110)
     servo.setServoAngle(13,160) # antes estava 143
     
