@@ -1,164 +1,72 @@
 
-# acho que este é melhor
-
 from Servo import *
 servo=Servo()
 
 
 def forward():
-    servo.setServoAngle(4,0)
-    servo.setServoAngle(3,0)
-    servo.setServoAngle(2,90)
+    servo.setServoAngle(12,120) 
+    servo.setServoAngle(6,60) 
+    servo.setServoAngle(9,60) 
+    servo.setServoAngle(3,120)
     
-    servo.setServoAngle(7,0)
-    servo.setServoAngle(6,0)
-    servo.setServoAngle(5,90)
-    
-    servo.setServoAngle(8,0)
-    servo.setServoAngle(9,0)
+    servo.setServoAngle(2,90) 
+    servo.setServoAngle(5,40)
     servo.setServoAngle(10,90)
+    servo.setServoAngle(13,148) # antes estava 143
     
-    servo.setServoAngle(11,0)
-    servo.setServoAngle(12,0)
-    servo.setServoAngle(13,90)
+    servo.setServoAngle(7,75)
+    servo.setServoAngle(8,100)
     
-    try:
-        for i in range(30): 
-            servo.setServoAngle(12,90+i) # pata da frente direita levanta
-            servo.setServoAngle(6,90+i) # pata de trás contrária levanta
-            time.sleep(0.001)
-            
-        for i in range(30):
-            # para as patas anteriores pousarem no chão
-            servo.setServoAngle(3,90-i) # pata da frente esquerda anda para trás
-            servo.setServoAngle(9,90-i) # para de trás direita faz o mesmo
-            time.sleep(0.01)
-            
-        for i in range(60):
-            servo.setServoAngle(3,60+i) # a pata frente esquerda anda para a frente
-            servo.setServoAngle(9,60+i) # a pata trás direita anda para a frente
-
-            servo.setServoAngle(12,120-i) # a pata da frente direita vai para tras
-            servo.setServoAngle(6,120-i) # a pata de trás esquerda vai para tras
-            
-        print ("\nEnd of program")
-    except KeyboardInterrupt:
-        print ("\nEnd of program")
-
+    time.sleep(5)
+    
+    for i in range(270):
         
-
-
-def backwards():
-    servo.setServoAngle(4,0)
-    servo.setServoAngle(3,0)
-    servo.setServoAngle(2,90)
-    
-    servo.setServoAngle(7,0)
-    servo.setServoAngle(6,0)
-    servo.setServoAngle(5,90)
-    
-    servo.setServoAngle(8,0)
-    servo.setServoAngle(9,0)
-    servo.setServoAngle(10,90)
-    
-    servo.setServoAngle(11,0)
-    servo.setServoAngle(12,0)
-    servo.setServoAngle(13,90)
-    try:
-        for i in range(30): 
-            servo.setServoAngle(12,90-i) # anda para a frente uma pata
-            servo.setServoAngle(6,90-i) # anda para a frente a para de trás contrária
-            time.sleep(0.001)
+        # quando chegar a 180, ou seja, quando andar 60º as patas que estão a mover-se de trás para a frente param
+        # como andamos (i)/3 faz com que vá de (0)/3 = 0 até (180)/3 = 60
+        if i <= 180:
+            servo.setServoAngle(12,120-i/3)
+            servo.setServoAngle(6,60+i/3) # para de trás direita faz o mesmo
             
-        for i in range(30):
-            servo.setServoAngle(3,90+i) # anda para a frente a outra pata
-            servo.setServoAngle(9,90+i) # anda para a frente a para de trás correspondente
-
-        for i in range(30):
-            servo.setServoAngle(3,60-2*i) # a 1ª pata volta à posição inicial (como se estivesse sem resistência)
-            servo.setServoAngle(9,60-i) # o mesmo
-
-            servo.setServoAngle(12,120+i) # o correspondente para a outra pata
-            servo.setServoAngle(6,120+i) # o mesmo
+            #servo.setServoAngle(2,90 - i/3.6)
+            #servo.setServoAngle(10, 90 + i/3.6)
+           
+        if i <= 90:
+            servo.setServoAngle(3, 120 + i/9 ) # final 130
+            servo.setServoAngle(9, 60 - i/9 ) # final 50
             
-        print ("\nEnd of program")
-    except KeyboardInterrupt:
-        print ("\nEnd of program")
-
-
-def right():
-    servo.setServoAngle(4,0)
-    servo.setServoAngle(3,0)
-    servo.setServoAngle(2,90)
-    
-    servo.setServoAngle(7,0)
-    servo.setServoAngle(6,0)
-    servo.setServoAngle(5,90)
-    
-    servo.setServoAngle(8,0)
-    servo.setServoAngle(9,0)
-    servo.setServoAngle(10,90)
-    
-    servo.setServoAngle(11,0)
-    servo.setServoAngle(12,0)
-    servo.setServoAngle(13,90)
-    try:
-        for i in range(30): 
-            servo.setServoAngle(4,90-i) # anda para a frente uma pata
-            servo.setServoAngle(7,90-i) # anda para a frente a para de trás correspondente
-            time.sleep(0.01)
             
-            for i in range(30):
-                servo.setServoAngle(11,90-i) # anda para a frente a outra pata
-                servo.setServoAngle(8,90-i) # anda para a frente a para de trás correspondente
-
-                servo.setServoAngle(4,90+i) # a 1ª pata volta à posição inicial (como se estivesse sem resistência)
-                servo.setServoAngle(7,90+i) # o mesmo
-                time.sleep(0.01)
-            
-            servo.setServoAngle(11,90+i) # o correspondente para a outra pata
-            servo.setServoAngle(8,90+i) # o mesmo
-            
-        print ("\nEnd of program")
-    except KeyboardInterrupt:
-        print ("\nEnd of program")
+        # a meio do movimento das outras patas, ou seja, apos andarem 30º, as contrárias vao começar a mover-se de frente para trás
+        # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
+        if i > 90:
+            servo.setServoAngle(3, 130 - (i-90)/2.6) # final a 60
+            servo.setServoAngle(9, 50 + (i-90)/2.6 ) # final a 120
         
-
-
-def left():
-    servo.setServoAngle(4,0)
-    servo.setServoAngle(3,0)
-    servo.setServoAngle(2,90)
+        time.sleep(0.01)
+     
     
-    servo.setServoAngle(7,0)
-    servo.setServoAngle(6,0)
-    servo.setServoAngle(5,90)
-    
-    servo.setServoAngle(8,0)
-    servo.setServoAngle(9,0)
-    servo.setServoAngle(10,90)
-    
-    servo.setServoAngle(11,0)
-    servo.setServoAngle(12,0)
-    servo.setServoAngle(13,90)
-    try:
-        for i in range(30): 
-            servo.setServoAngle(11,90-i) # anda para a frente uma pata
-            servo.setServoAngle(8,90-i) # anda para a frente a para de trás correspondente
-            time.sleep(0.01)
+        # estará ao contrário da posição inicial
+    ################################################################
+   
+    for i in range(270):
+        
+        # quando chegar a 180, ou seja, quando andar 60º as patas que estão a mover-se de trás para a frente param
+        # como andamos (i)/3 faz com que vá de (0)/3 = 0 até (180)/3 = 60
+        if i <= 180:
+            servo.setServoAngle(3, 60+i/3)
+            servo.setServoAngle(9,120-i/3) # para de trás direita faz o mesmo
             
-            for i in range(30):
-                servo.setServoAngle(4,90-i) # anda para a frente a outra pata
-                servo.setServoAngle(7,90-i) # anda para a frente a para de trás correspondente
-
-                servo.setServoAngle(11,90+i) # a 1ª pata volta à posição inicial (como se estivesse sem resistência)
-                servo.setServoAngle(8,90+i) # o mesmo
-                time.sleep(0.01)
+            #servo.setServoAngle(2,90 - i/3.6)
+            #servo.setServoAngle(10, 90 + i/3.6)
+           
+        if i <= 90:
+            servo.setServoAngle(12, 60 + i/9 ) # final 130
+            servo.setServoAngle(6, 120 - i/9 ) # final 50
             
-            servo.setServoAngle(4,90+i) # o correspondente para a outra pata
-            servo.setServoAngle(7,90+i) # o mesmo
             
-        print ("\nEnd of program")
-    except KeyboardInterrupt:
-        print ("\nEnd of program")
-
+        # a meio do movimento das outras patas, ou seja, apos andarem 30º, as contrárias vao começar a mover-se de frente para trás
+        # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
+        if i > 90:
+            servo.setServoAngle(12, 130 - (i-90)/2.6) # final a 60
+            servo.setServoAngle(6, 50 + (i-90)/2.6 ) # final a 120
+        
+         
