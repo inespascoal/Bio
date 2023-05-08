@@ -52,6 +52,11 @@ def forward():
             servo.setServoAngle(2, 70 - (i-90)/2)
             servo.setServoAngle(10, 110 + (i-90)/2) 
         
+        if i > 180:
+            servo.setServoAngle(2, 60 - (i-90)/2.25)
+            servo.setServoAngle(10, 120 + (i-90)/2) 
+        
+        
         time.sleep(0.03)
 
     
