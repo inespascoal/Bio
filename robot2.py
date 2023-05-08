@@ -18,17 +18,17 @@ def forward():
     servo.setServoAngle(8,100)
     
     time.sleep(5)
-    '''
+
     for i in range(270):
         
         # quando chegar a 180, ou seja, quando andar 60º as patas que estão a mover-se de trás para a frente param
         # como andamos (i)/3 faz com que vá de (0)/3 = 0 até (180)/3 = 60
         if i <= 180:
-            servo.setServoAngle(12,120-i/3)
-            servo.setServoAngle(6,60+i/3) # para de trás direita faz o mesmo
+            servo.setServoAngle(12,120-i/3) # final 60
+            servo.setServoAngle(6,60+i/3) # final 120
             
-            servo.setServoAngle(13,90 - i/3.6)
-            servo.setServoAngle(5, 90 + i/3.6)
+            servo.setServoAngle(13,165 - i/3.27) #final 110
+            servo.setServoAngle(5, 20 + i/3.6) # final 70
            
         if i <= 90:
             servo.setServoAngle(3, 120 + i/9 ) # final 130
@@ -36,7 +36,8 @@ def forward():
             
             servo.setServoAngle(2,90 - i/9) # final 70
             servo.setServoAngle(10, 90 + i/9) #final 110           
-            
+        time.sleep(0.03)
+        '''
         # a meio do movimento das outras patas, ou seja, apos andarem 30º, as contrárias vao começar a mover-se de frente para trás
         # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
         if i > 90:
@@ -48,11 +49,11 @@ def forward():
             servo.setServoAngle(10, 110 - (i-90)) 
         
         time.sleep(0.03)
-     '''
+
     
         # estará ao contrário da posição inicial
     ################################################################
-    
+    '''
     '''
     for i in range(270):
         
