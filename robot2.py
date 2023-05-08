@@ -68,5 +68,22 @@ def forward():
         if i > 90:
             servo.setServoAngle(12, 130 - (i-90)/2.6) # final a 60
             servo.setServoAngle(6, 50 + (i-90)/2.6 ) # final a 120
-        
+    
+    
+# Main program logic follows:
+if __name__ == '__main__':
+
+    print ('Program is starting ... ')
+    import sys
+    if len(sys.argv)<2:
+        print ("Parameter error: Please assign the device")
+        exit() 
+    if sys.argv[1] == 'Forward':
+        forward()
+    elif sys.argv[1] == 'Forward1':
+        forward1()
+    elif sys.argv[1] == 'Right': 
+        right()              
+    elif sys.argv[1] == 'Left':   
+        left() 
          
