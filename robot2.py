@@ -53,7 +53,7 @@ def forward():
         
         
         if i > 180:
-            servo.setServoAngle(2, 70 - (i-90)/1.5)    # final 10
+            servo.setServoAngle(2, 70 - (i-90)/1.28)    # final 
             servo.setServoAngle(10, 110 + (i-90)/1.2) # final 185
         
         
