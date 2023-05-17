@@ -34,11 +34,9 @@ def forward():
             servo.setServoAngle(3, 120 + i/9 ) # final 130
             servo.setServoAngle(9, 60 - i/9 ) # final 50
             
-            servo.setServoAngle(2, 69 - i/9) # final 60
-            servo.setServoAngle(10, 111 + i/9) #final 120           
+            servo.setServoAngle(2, 69 - i/6.4) # final 55
+            servo.setServoAngle(10, 111 + i/6.4) #final 125           
         
-        
-        # até aqui está a funcionar como quero!!! omddddd
         
 
         # a meio do movimento das outras patas, ou seja, apos andarem 30º, as contrárias vao começar a mover-se de frente para trás
@@ -51,6 +49,7 @@ def forward():
         if i > 90 and i < 110:
             servo.setServoAngle(2, 60 + (i-90)/2) # final 70
             servo.setServoAngle(10, 120 - (i-90)/2) # final 110
+        
         
         if i > 180:
             servo.setServoAngle(2, 70 - (i-90)/3)    # final 20
