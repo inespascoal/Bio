@@ -40,7 +40,7 @@ def forward():
         
         # até aqui está a funcionar como quero!!! omddddd
         
- 
+ '''
         # a meio do movimento das outras patas, ou seja, apos andarem 30º, as contrárias vao começar a mover-se de frente para trás
         # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
         
@@ -58,7 +58,7 @@ def forward():
         
         
         time.sleep(0.03)
-
+'''
     
         # estará ao contrário da posição inicial
     ################################################################
