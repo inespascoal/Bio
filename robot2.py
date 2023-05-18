@@ -44,7 +44,7 @@ def forward():
         # como andamos (i-90)/3 faz com que vá de (91-90)/3 = 1/3 até (270-90)/3 = 60
         
         if i > 90:
-            servo.setServoAngle(3, 130 - (i-90)/2.6) # final a 60
+            servo.setServoAngle(3, 130 - (i-90)/3) # final a 60
             servo.setServoAngle(9, 50 + (i-90)/3 ) # final a 120
             
         if i > 90 and i < 110:
