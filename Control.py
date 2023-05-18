@@ -302,7 +302,7 @@ class Control:
                 Y1=self.height
             self.changeCoordinates('forWard',X1,Y1,0,X2,Y2,0)
             #time.sleep(0.01)
-     forWard(self)
+   
             
     def turnLeft(self):
         for i in range(0,361,self.speed):
