@@ -8,7 +8,7 @@ from Control import *
 control=Control()
 
 for i in range(10):
-    control.forWard()
+    control.turnRight()
 
 control.stop()
 
