@@ -9,6 +9,6 @@ control=Control()
 
 for i in range(15):
     control.attitude(0,0,i)
-
+    time.sleep(0.1)
 control.stop()
 
