@@ -57,8 +57,8 @@ def forward():
         
         
         if i > 130 and i < 150:
-            servo.setServoAngle(2, 85 + (i-90)/1.67)    # final 25
-            servo.setServoAngle(10, 102.6 - (i-90)/2.3) # final 185
+            servo.setServoAngle(2, 3.66 + (i-90)/0.71)    # final 80
+            servo.setServoAngle(10, 140 - (i-90)/2) # final 110
         
         
         time.sleep(0.03)
