@@ -12,18 +12,18 @@ from Control import *
 async def server(websocket, path):
     async for message in websocket:
         await websocket.send(f'Got your msg its: {message}')
-        match message:
-                case "0":
-                  control=Control()
-                  for i in range(10):
-                  control.forWard()
-                  control.stop()
-                case "1":
-                  print("back")
-                case "2":
-                  print("right")
-                case "3":
-                  print("left")
+        if message == "0":
+          control=Control()
+          for i in range(10):
+               control.forWard()
+               control.stop()
+        elif message == "1":
+            print("back")
+        elif message == "2":
+            print("right")
+        elif message == "3":
+            print("left")
+   
 
 
 
