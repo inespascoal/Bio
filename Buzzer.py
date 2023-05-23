@@ -7,7 +7,7 @@ class Buzzer:
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.Buzzer_Pin,GPIO.OUT)
     def run(self, d):
-        if (d=<20 and d>15):
+        if (d<=20 and d>15):
             buzzer_pwm.start(1)
         elif (d<=15 and d>10):
             buzzer_pwm.start(3)
