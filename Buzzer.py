@@ -9,11 +9,11 @@ class Buzzer:
     def run(self, d):
         buzzer_pwm = GPIO.PWM(self.Buzzer_Pin, 100)
         if (d<=20 and d>15):
-            buzzer_pwm.start(1)
+            buzzer_pwm.start(50)
         elif (d<=15 and d>10):
-            buzzer_pwm.start(3)
+            buzzer_pwm.start(70)
         elif (d<=10):
-            buzzer_pwm.start(5)
+            buzzer_pwm.start(100)
             #GPIO.output(self.Buzzer_Pin,True)
     def stop(self):
         buzzer_pwm = GPIO.PWM(self.Buzzer_Pin, 100)
