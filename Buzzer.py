@@ -6,6 +6,7 @@ class Buzzer:
         self.Buzzer_Pin = 17
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.Buzzer_Pin,GPIO.OUT)
+        buzzer_pwm = GPIO.PWM(buzzer_pin, 100)
     def run(self, d):
         if (d<=20 and d>15):
             buzzer_pwm.start(1)
