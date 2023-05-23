@@ -22,7 +22,7 @@ async def server(websocket, path):
         buzzer.stop()
         if message == "0":
             d = ultrasonic.getDistance()
-            if (d > 5 ):
+            if (d>5):
                 buzzer.run(d)
                 control.forWard()
         elif message == "1":
