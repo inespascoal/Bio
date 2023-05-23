@@ -14,7 +14,7 @@ class Buzzer:
         elif (d<=10):
             buzzer_pwm.start(5)
             #GPIO.output(self.Buzzer_Pin,True)
-     def stop(self):
+    def stop(self):
         GPIO.output(self.Buzzer_Pin,False)
 if __name__=='__main__':
     pass
