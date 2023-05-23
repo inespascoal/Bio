@@ -9,16 +9,21 @@ import asyncio
 import websockets
 from Control import *
 from Ultrasonic import *
+from Buzzer import *
 
 control = Control()
+ultrasonic = Ultrasonic()
+buzzer = Buzzer()
 
 async def server(websocket, path):
     async for message in websocket:
         await websocket.send(f'Got your msg its: {message}')
         control.stop()
+        buzzer.stop()
         if message == "0":
-            d = getDistance()
+            d = ultrasonic.getDistance()
             if (d > 5 ):
+                buzzer.run(d)
                 control.forWard()
         elif message == "1":
            control.backWard()
