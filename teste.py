@@ -8,15 +8,18 @@ Created on Fri May  5 09:08:08 2023
 import asyncio
 import websockets
 from Control import *
+from Ultrasonic import *
 
-control=Control()
+control = Control()
 
 async def server(websocket, path):
     async for message in websocket:
         await websocket.send(f'Got your msg its: {message}')
         control.stop()
         if message == "0":
-          control.forWard()
+            d = getDistance()
+            if (d > 5 ):
+                control.forWard()
         elif message == "1":
            control.backWard()
         elif message == "2":
