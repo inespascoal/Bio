@@ -27,7 +27,7 @@ async def server(websocket, path):
 
 
 
-start_server=websockets.serve(server, "localhost", 5000)
+start_server=websockets.serve(server, "10.0.7.199", 5000)
 
 loop = asyncio.get_event_loop()
 
@@ -38,7 +38,7 @@ loop.run_forever()
 # loop.stop()
 
 # async def main():
-#     async with websockets.serve(echo, "localhost", 8765):
+#     async with websockets.serve(echo, "10.0.7.199", 8765):
 #         print("WebSocket server listening on ws://localhost:8765")
 #         await asyncio.Future()  # run forever
 
