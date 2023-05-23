@@ -9,10 +9,10 @@ class Buzzer:
     def run(self, d):
         buzzer_pwm = GPIO.PWM(self.Buzzer_Pin, 100)
         if (d<=20 and d>15):
-            GPIO.output(self.Buzzer_Pin,True)
             #buzzer_pwm.start(50)
             GPIO.output(self.Buzzer_Pin,True)
         elif (d<=15 and d>10):
+            GPIO.output(self.Buzzer_Pin,True)
             #buzzer_pwm.start(70)
         elif (d<=10):
             GPIO.output(self.Buzzer_Pin,True)
