@@ -25,7 +25,7 @@ async def server(websocket, path):
             if (d>5):
                 buzzer.run(d)
                 control.forWard()
-                buzzer.stop()
+                buzzer.stop() 
         elif message == "1":
            control.backWard()
         elif message == "2":
