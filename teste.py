@@ -23,9 +23,9 @@ async def server(websocket, path):
         if message == "0":
             d = ultrasonic.getDistance()
             if (d>5):
-                buzzer.run(d)
+                #buzzer.run(d)
                 control.forWard()
-                buzzer.stop() 
+                #buzzer.stop() 
         elif message == "1":
            control.backWard()
         elif message == "2":
