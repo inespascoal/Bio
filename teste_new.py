@@ -16,10 +16,10 @@ ultrasonic = Ultrasonic()
 buzzer = Buzzer()
 
 
-t0 = time.time()
 
 
 async def server(websocket, path):
+    t0 = time.time()
     async for message in websocket:
         await websocket.send(f'Got your msg its: {message}')
         control.stop()
