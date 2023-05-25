@@ -6,7 +6,7 @@ class Buzzer:
         self.Buzzer_Pin = 17
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.Buzzer_Pin,GPIO.OUT)
-    def run(self,command):
+    def run_original(self,command):
         if command!="0":
             GPIO.output(self.Buzzer_Pin,True)
         else:
